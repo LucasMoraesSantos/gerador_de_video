@@ -1,0 +1,7 @@
+body { font-family: Inter, Arial, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; }
+.container { max-width: 900px; margin: 0 auto; padding: 24px; }
+section { background: #111827; border: 1px solid #334155; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+form { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 8px; }
+input, select, button { padding: 10px; border-radius: 8px; border: 1px solid #475569; background: #1e293b; color: #e2e8f0; }
+button { cursor: pointer; background: #0ea5e9; border: none; color: #082f49; font-weight: 700; }
+pre { background: #020617; border-radius: 8px; padding: 10px; white-space: pre-wrap; max-height: 220px; overflow: auto; }

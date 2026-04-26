@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+gerador.db
+secrets/
+outputs/
+node_modules/
+artifacts/*.png
