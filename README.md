@@ -33,11 +33,11 @@ uvicorn app.main:app --reload
 
 Acesse: http://localhost:8000
 
-## Deploy no Netlify
+## Deploy no Netlify (corrigido para evitar 404)
 
 1. Conecte o repositório no Netlify.
 2. Build command: *(vazio)*.
-3. Publish directory: `web`.
+3. Publish directory: `.` (raiz do repositório).
 4. Functions directory: `netlify/functions`.
 5. Defina variáveis de ambiente no painel do Netlify (as mesmas do `.env.example`).
 6. Faça deploy.
@@ -79,3 +79,11 @@ Exemplo:
 ```bash
 SCREENSHOT_URL=http://127.0.0.1:8888 SCREENSHOT_FILE=artifacts/home-netlify.png npm run screenshot
 ```
+
+
+### Se ainda der 404 no Netlify
+
+1. No painel do Netlify, vá em **Site configuration > Build & deploy > Publish directory** e confirme `.`.
+2. Em **Functions directory**, confirme `netlify/functions`.
+3. Clique em **Trigger deploy > Clear cache and deploy site**.
+4. Teste primeiro `https://SEU_DOMINIO/` e depois `https://SEU_DOMINIO/health`.
