@@ -5,3 +5,5 @@ __pycache__/
 gerador.db
 secrets/
 outputs/
+node_modules/
+artifacts/*.png

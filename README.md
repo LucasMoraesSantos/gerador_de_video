@@ -57,3 +57,25 @@ Veja `.env.example`.
 2. O sistema aceita múltiplos canais (`/api/channels`) para rodar em paralelo por nicho.
 3. A montagem final de vídeo usa comando ffmpeg configurável em `app/services/video_renderer.py`.
 4. Sem credenciais reais, o sistema roda em modo de desenvolvimento com erros claros de configuração.
+
+
+## Screenshot da interface (habilitado)
+
+Para gerar screenshot automaticamente (local/CI):
+
+```bash
+npm install
+npx playwright install chromium
+npm run screenshot
+```
+
+Variáveis opcionais:
+
+- `SCREENSHOT_URL` (padrão: `http://127.0.0.1:8000`)
+- `SCREENSHOT_FILE` (padrão: `artifacts/ui-home.png`)
+
+Exemplo:
+
+```bash
+SCREENSHOT_URL=http://127.0.0.1:8888 SCREENSHOT_FILE=artifacts/home-netlify.png npm run screenshot
+```
