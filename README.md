@@ -16,11 +16,12 @@ Aplicação self-hosted para:
 ## Stack
 
 - **Backend:** FastAPI + APScheduler + SQLite
-- **Frontend:** HTML + JS (servido pelo FastAPI)
+- **Frontend:** HTML + JS
+- **Hospedagem:** Netlify (Static + Serverless Functions Python)
 - **Integrações:** YouTube Data API, YouTube Upload API, Google Drive API, Google Sheets API, OpenAI API
 - **Renderização:** ffmpeg (via subprocess)
 
-## Setup rápido
+## Setup local
 
 ```bash
 python -m venv .venv
@@ -31,6 +32,20 @@ uvicorn app.main:app --reload
 ```
 
 Acesse: http://localhost:8000
+
+## Deploy no Netlify
+
+1. Conecte o repositório no Netlify.
+2. Build command: *(vazio)*.
+3. Publish directory: `web`.
+4. Functions directory: `netlify/functions`.
+5. Defina variáveis de ambiente no painel do Netlify (as mesmas do `.env.example`).
+6. Faça deploy.
+
+O roteamento já está pronto em `netlify.toml`:
+
+- `/api/*` → função serverless FastAPI
+- `/` → interface web
 
 ## Variáveis de ambiente
 

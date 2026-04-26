@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gerador de Vídeos</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Workflow de Vídeos (Netlify + API)</h1>
+
+    <section>
+      <h2>1) Canais</h2>
+      <form id="channelForm">
+        <input name="name" placeholder="Nome do canal" required />
+        <input name="niche" placeholder="Nicho" required />
+        <input name="youtube_api_key" placeholder="YouTube API key" required />
+        <input name="youtube_channel_id" placeholder="YouTube Channel ID" required />
+        <button>Salvar canal</button>
+      </form>
+      <pre id="channels"></pre>
+    </section>
+
+    <section>
+      <h2>2) Análise e Ranking</h2>
+      <form id="analyzeForm">
+        <input name="channel_config_id" type="number" placeholder="ID do canal" required />
+        <input name="max_results" type="number" value="15" required />
+        <button>Analisar vídeos</button>
+      </form>
+      <form id="rankingForm">
+        <input name="niche" placeholder="Nicho" required />
+        <button>Ver ranking</button>
+      </form>
+      <pre id="ranking"></pre>
+    </section>
+
+    <section>
+      <h2>3) Roteiro e SEO</h2>
+      <form id="scriptForm">
+        <input name="candidate_id" type="number" placeholder="Candidate ID" required />
+        <input name="language" value="pt-BR" required />
+        <select name="voice">
+          <option>alloy</option>
+          <option>verse</option>
+          <option>sage</option>
+        </select>
+        <button>Gerar roteiro</button>
+      </form>
+      <button id="refreshScripts">Atualizar roteiros</button>
+      <pre id="scripts"></pre>
+    </section>
+
+    <section>
+      <h2>4) Aprovar + Agendar</h2>
+      <form id="approveForm">
+        <input name="script_job_id" type="number" placeholder="Script Job ID" required />
+        <button>Aprovar</button>
+      </form>
+      <form id="scheduleForm">
+        <input name="script_job_id" type="number" placeholder="Script Job ID" required />
+        <input name="scheduled_at" type="datetime-local" required />
+        <button>Agendar publicação</button>
+      </form>
+      <button id="refreshPublish">Atualizar fila</button>
+      <pre id="publish"></pre>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
